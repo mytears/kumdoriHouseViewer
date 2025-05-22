@@ -20,26 +20,8 @@ let m_notice_timeout = null;
 let m_default_font_size = 90;
 let m_curr_obj = null;
 
-let m_main_swiper = null;
 
 function setInit() {
-    m_main_swiper = new Swiper('.main_list', {
-        spaceBetween: 0, //슬라이드 간격
-        speed: 700,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        },
-        on: {
-            slideChange: function () {},
-            init: function () {},
-        },
-    });
-
 
     $(".btn_play").on("touchstart mousedown", function (e) {
         e.preventDefault();
@@ -134,40 +116,6 @@ function setInitSetting(_ret_code) {
     //console.log(m_contents_list);
 
     setNoticeDrawInfo();
-
-    $('#id_main_list_wrapper').html("");
-    let t_max = 12;
-    let t_html = "";
-    let r_html = "";
-    let page_cnt = Math.ceil(m_contents_list.length / t_max);
-    for (let i = 0; i < page_cnt; i += 1) {
-        t_html += "<div id='id_main_list_slide_" + i + "' class='swiper-slide item_list'>";
-        t_html += "    <ul id='id_main_list_wrap_" + i + "' class='swiper-slide-container item_wrap'>";
-        t_html += "    </ul>";
-        t_html += "</div>";
-    }
-    $('#id_main_list_wrapper').append(t_html);
-
-    for (let i = 0; i < m_contents_list.length; i += 1) {
-        let t_obj = m_contents_list[i];
-        let t_id = Math.floor(i / t_max);
-        r_html += "<li class='item' onClick='javascript:onClickItem(" + i + ");'>";
-        r_html += "     <div class='img_zone'>";
-        r_html += "          <img src='" + convFilePath(t_obj.THUM_URL) + "'>";
-        r_html += "     </div>";
-        r_html += "     <div class='txt_zone'>";
-        r_html += "          <p><span>" + convStr(t_obj.CONTENTS_NAME) + "</span></p>";
-        r_html += "     </div>";
-        r_html += "</li>";
-
-        $('#id_main_list_wrap_' + t_id).append(r_html);
-        r_html = "";
-    }
-
-
-
-    m_main_swiper.update(); // 스와이퍼 업데이트
-    m_main_swiper.slideTo(0, 0);
 
     setTimeout(function () {
         setHideCover();
