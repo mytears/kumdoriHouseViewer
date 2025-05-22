@@ -1,0 +1,7 @@
+﻿{
+    "setting": {
+        "content_url": "xml/kiosk_contents.xml",
+        "root_url":"",
+		"notice_mode":""
+    }
+}

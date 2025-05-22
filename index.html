@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="include/css/common.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="include/css/index.css" rel="stylesheet" type="text/css" />
+
+    <script src="include/js/lib/jquery.min.js"></script>
+    <script src="include/js/lib/gsap.min.js"></script>
+    <script src="include/js/comm.js"></script>
+    <script src="include/js/index.js"></script>
+
+</head>
+
+
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <div class="main_cont">
+        <div class="cover">
+            <div class="loading-spinner"></div>
+        </div>
+        <div id="id_page_notice_list" class="notice_main">
+            <div id="id_notice_box_01" class="notice_box" style="z-index: 9; display:none;">
+                <img src="">
+                <video muted preload autoplay id="id_notice_video_1">
+                </video>
+            </div>
+            <div id="id_notice_box_02" class="notice_box" style="z-index: 10; display:none;">
+                <img src="">
+                <video muted preload autoplay id="id_notice_video_2">
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="debug_area" style="width:100%;display:no1ne;">
+        <input type="text" class="input_zone" value="admin_play|1">
+        <button class="btn" onClick="javascript:onClickDebug();">Button</button>
+    </div>
+</body>
+
+</html>
+
+
+<script language="javascript">
+    window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(setInit, 100);
+    });
+
+</script>
