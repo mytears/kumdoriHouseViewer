@@ -40,15 +40,15 @@
                 </video>
             </div>
         </div>
-        <div class="video_main">
+        <div class="video_main" style="display:none;">
             <div class="video_box">
-                <img src="">
-                <video muted preload autoplay></video>
+                <img id="id_main_image" src="" style="display:none;">
+                <video muted preload autoplay id="id_main_video" style="display:none;"></video>
             </div>
         </div>
     </div>
     <div class="debug_area" style="width:100%;display:no1ne;">
-        <input type="text" class="input_zone" value="admin_play|1">
+        <input type="text" class="input_zone" value="UDP_SEND|0">
         <button class="btn" onClick="javascript:onClickDebug();">Button</button>
     </div>
 </body>

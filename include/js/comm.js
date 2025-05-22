@@ -204,8 +204,6 @@ function onReadSockContents() {
 }
 
 //이미지 주소를 보정
-
-//이미지 주소를 보정
 function convFilePath(_path) {
     let t_path = "";
 
@@ -228,4 +226,8 @@ function convFilePath(_path) {
     }
 
     return t_path;
+}
+
+function onClickDebug(){
+    setAdminVideoPlay("1");
 }

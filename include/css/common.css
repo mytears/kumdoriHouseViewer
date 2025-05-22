@@ -249,12 +249,12 @@ li {
 }
 
 button,
-input[type='text'],
+/*input[type='text'],*/
 input[type='password'],
 select,
 textarea {
-    border-radius: 0;
-    vertical-align: middle;
+/*    border-radius: 0;*/
+/*    vertical-align: middle;*/
 }
 
 textarea {
@@ -360,4 +360,26 @@ input:focus {
     width: 100%;
     height: 100%;
     opacity: 0.75;
+}
+
+.debug_area {
+    position: absolute;
+    z-index: 999999;
+    top:0px;
+}
+
+.debug_area .input_zone{
+    width: 10%;
+    height: 80px;
+}
+
+
+.debug_area .btn{
+    width: 10%;
+    height: 80px;
+    font-size: 50px;
+}
+
+input[type='text']{
+    font-size: 50px;
 }

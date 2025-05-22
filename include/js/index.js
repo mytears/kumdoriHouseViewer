@@ -62,7 +62,7 @@ function setMainInterval() {
 
     time_gap = time_curr - m_time_last;
     time_gap = Math.floor(time_gap / 1000);
-    
+
     if (time_gap >= 180) {
         m_time_last = new Date().getTime();
         setMainReset();
@@ -72,9 +72,6 @@ function setMainInterval() {
     if (m_status_time_chk > 10) {
         m_status_time_chk = 0;
         setCallWebToApp('STATUS', 'STATUS');
-        if ($(".screen_page").css("display") == "none") {
-            setStartTopTextAnimation();
-        }
     }
 }
 
@@ -122,44 +119,6 @@ function setInitSetting(_ret_code) {
     }, 500);
 }
 
-function onClickItem(_num) {
-    //console.log(_num);
-    $(".btn_play").show();
-    $(".btn_stop").hide();
-    m_curr_obj = m_contents_list[_num];
-    $(".txt_title").html(m_curr_obj.CONTENTS_NAME);
-    setTimeout(adjustFontSize, 50);
-    $(".txt_desc").html("재생 버튼을 누르시면 영상이 재생됩니다");
-    $(".control_area").fadeIn();
-}
-
-function onClickBtnStop(_obj) {
-    //console.log(m_curr_obj);
-    $(".btn_play").show();
-    $(".btn_stop").hide();
-    $(".txt_desc").html("재생 버튼을 누르시면 영상이 재생됩니다");
-    
-    setCallWebToApp('UDP_SEND', "STOP|"+m_curr_obj.ID);
-}
-
-function onClickBtnPlay(_obj) {
-    //console.log(m_curr_obj);
-    $(".btn_play").hide();
-    $(".btn_stop").show();
-    $(".txt_desc").html("재생중입니다");
-    
-    setCallWebToApp('UDP_SEND', "PLAY|"+m_curr_obj.ID);
-}
-
-function onClickBtnClose(_obj) {
-    //console.log(m_curr_obj);
-    if ($(".btn_stop").css("display") != "none") {
-        setCallWebToApp('UDP_SEND', "STOP|"+m_curr_obj.ID);
-    }
-    $(".txt_desc").html("&nbsp;");
-    $(".control_area").fadeOut();
-    m_curr_obj = null;
-}
 
 function setMainReset() {
     console.log("setMainReset");
@@ -178,9 +137,16 @@ function setInitFsCommand() {
     }
 }
 
-function setCommand(_data) {
-    console.log("setCommand", _data);
-    const parts = _data.trim().split('|');
+function setCommand(_str) {
+    console.log("setCommand", _str);
+    let t_list = _str.split("|");
+    let cmd = t_list[0];
+    let arg = t_list[1];
+    if (cmd.toUpperCase() == "PLAY") {
+
+    } else if (cmd.toUpperCase() == "STOP") {
+
+    }
 }
 
 function setScreenAuto() {
@@ -264,6 +230,17 @@ function setNoticeDrawInfoEnd() {
     }
 }
 
+function setAdminVideoPlay(_code) {
+    m_curr_obj = m_contents_list[parseInt(_code)];
+    $("#id_main_video").hide();
+    $("#id_main_image").hide();
+    if (m_curr_obj.TYPE == "MOV") {
+        $("#id_main_video").show();
+        $("#id_main_video").attr('src', convFilePath(m_curr_obj.FILE_URL));
+        $(".video_main").fadeIn();
+    }
+}
+
 function setMainTimeOut() {
     if ($("#id_page_notice_list").css("display") == "none") {
         return;
@@ -283,79 +260,8 @@ function onClickScreenSaver() {
         $("#id_screen_area_02").children("video")[0].pause();
     } catch (err) {}
     $(".screen_page").fadeOut();
-    clearTimeout(setTimeoutID);    
-    
-    $(".img_char").removeClass("pause");
-    
-    setStartTopTextAnimation();
-}
+    clearTimeout(setTimeoutID);
 
-function setStartTopTextAnimation(){
-    $(".txt_small").css("opacity","0");
-    setTextTypeAnimation(".txt_big", "Daejeon<br>Media Art", 0.075);
-}
-
-function adjustFontSize() {
-    $(".txt_title").css("font-size", m_default_font_size + "px");
-    let $parent = $(".txt_title").parent(); // 부모 요소
-    let parentWidth = $parent.width(); // 부모 너비
-    let textWidth = $(".txt_title").outerWidth(); // 현재 텍스트 너비
-    let fontSize = m_default_font_size; // 초기 폰트 크기
-
-    // 부모 너비를 초과하면 폰트 크기 줄이기
-    //    console.log(textWidth); 
-    //console.log(textWidth, parentWidth, fontSize);
-    while (textWidth > parentWidth && fontSize > 10) {
-        fontSize -= 2;
-        $(".txt_title").css("font-size", fontSize + "px");
-        textWidth = $(".txt_title").outerWidth();
-    }
-}
-
-function setTextTypeAnimation(target_selector, text, speed = 0.1) {
-    const $target = $(target_selector);
-    $target.empty();
-
-    // 문자열에서 <br>은 태그로 인식되게 split 처리
-    const parts = text.split(/(<br\s*\/?>)/i); // <br>, <br/>, <br /> 모두 처리
-    let html = "";
-
-    parts.forEach(part => {
-        if (part.toLowerCase().startsWith("<br")) {
-            html += part; // br은 span으로 감싸지 않고 그대로 삽입
-        } else {
-            html += part
-                .split("")
-                .map(char => `<span style="opacity:0;">${char}</span>`)
-                .join("");
-        }
-    });
-
-    $target.html(html);
-
-    // 타이핑 애니메이션
-    gsap.to(`${target_selector} span`, {
-        opacity: 1,
-        duration: 0.3,
-        stagger: speed,
-        ease: "power1.inOut",
-        onComplete: () => {
-            onTypeAnimationComp(); // 애니메이션 끝나면 실행
-        }
-    });
-}
-
-function onTypeAnimationComp(){
-    
-    gsap.to($(".txt_small"), {
-        startAt: {
-            y: 20
-        },
-        opacity: 1,
-        duration: 0.75,
-        ease: "power1.out",
-        y: 0
-    });
 }
 
 function convStr(_str) {
