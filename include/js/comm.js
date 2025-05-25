@@ -229,5 +229,5 @@ function convFilePath(_path) {
 }
 
 function onClickDebug(){
-    setAdminVideoPlay("1");
+    setCommand($(".input_zone").val());
 }

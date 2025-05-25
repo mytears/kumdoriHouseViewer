@@ -44,7 +44,11 @@ function setInit() {
     });
 
     $("html").on("touchstart mousedown", function (e) {
-        e.preventDefault();
+        // 입력 가능한 요소는 기본 동작 허용
+        const tag = e.target.tagName.toLowerCase();
+        if (tag !== 'input' && tag !== 'textarea' && tag !== 'select' && tag !== 'button') {
+            e.preventDefault(); // 이 외 요소에서만 prevent
+        }
         setTouched();
     });
 
@@ -124,8 +128,8 @@ function setMainReset() {
     console.log("setMainReset");
     $(".img_char").addClass("pause");
     setScreenAuto();
-    m_main_swiper.slideTo(0, 0);
     m_curr_obj = null;
+    setAdminVideoStop();
 }
 
 function setInitFsCommand() {
@@ -142,11 +146,18 @@ function setCommand(_str) {
     let t_list = _str.split("|");
     let cmd = t_list[0];
     let arg = t_list[1];
-    if (cmd.toUpperCase() == "PLAY") {
-
-    } else if (cmd.toUpperCase() == "STOP") {
-
-    }
+    let t_arg_list = arg.split(",");
+    
+    if (cmd.toUpperCase() == "UDP_RECV") {
+        //UDP_RECV|PLAY,1
+        if(t_arg_list[0] == "PLAY"){
+            setAdminVideoPlay(t_arg_list[1]);
+        }else if(t_arg_list[0] == "STOP"){
+            setAdminVideoStop();            
+        }else if(t_arg_list[0] == "RESET"){
+            setMainReset();    
+        }
+    } 
 }
 
 function setScreenAuto() {
@@ -231,14 +242,22 @@ function setNoticeDrawInfoEnd() {
 }
 
 function setAdminVideoPlay(_code) {
+    console.log("setAdminVideoPlay",_code);
     m_curr_obj = m_contents_list[parseInt(_code)];
     $("#id_main_video").hide();
     $("#id_main_image").hide();
     if (m_curr_obj.TYPE == "MOV") {
         $("#id_main_video").show();
-        $("#id_main_video").attr('src', convFilePath(m_curr_obj.FILE_URL));
-        $(".video_main").fadeIn();
+        $("#id_main_video").attr("src", convFilePath(m_curr_obj.FILE_URL));
+    }else if (m_curr_obj.TYPE == "IMG") {
+        $("#id_main_image").show();
+        $("#id_main_image").attr("src", convFilePath(m_curr_obj.FILE_URL));
     }
+        $(".video_main").fadeIn();
+}
+
+function setAdminVideoStop(){
+    console.log("setAdminVideoStop");
 }
 
 function setMainTimeOut() {
