@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <KIOSK>
-  <HEADER>
-  </HEADER>
+    <HEADER>
+        <KIOSK_CODE>H002KIO</KIOSK_CODE>
+    </HEADER>
   <NOTICE_LIST>
 	<NOTICE_INFO id="1" type="MOV">
       <NOTICE_NAME><![CDATA[]]></NOTICE_NAME>
