@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KIOSK>
+  <HEADER>
+  </HEADER>
+  <NOTICE_LIST>
+	<NOTICE_INFO id="1" type="MOV">
+      <NOTICE_NAME><![CDATA[]]></NOTICE_NAME>
+      <NOTICE_DESC><![CDATA[]]></NOTICE_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_01.mp4</FILE_URL>
+    </NOTICE_INFO>
+	<NOTICE_INFO id="2" type="IMG">
+      <NOTICE_NAME><![CDATA[]]></NOTICE_NAME>
+      <NOTICE_DESC><![CDATA[]]></NOTICE_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/notice/intro_bg1.png</FILE_URL>
+    </NOTICE_INFO>
+	<NOTICE_INFO id="3" type="IMG">
+      <NOTICE_NAME><![CDATA[]]></NOTICE_NAME>
+      <NOTICE_DESC><![CDATA[]]></NOTICE_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/notice/intro_bg2.png</FILE_URL>
+    </NOTICE_INFO>
+  </NOTICE_LIST>
+  <CONTENTS_LIST>
+    <CONTENTS_INFO id="1" type="MOV">
+      <CONTENTS_NAME><![CDATA[타이틀 글자수 테스트용 동영상 001]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_01.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_01.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="2" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 002]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_02.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_02.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="3" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 003]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_03.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_03.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="4" type="MOV">
+      <CONTENTS_NAME><![CDATA[테스트용 동영상 004]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_04.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_04.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="5" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 005]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_05.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_05.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="6" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 006]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_06.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_06.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="7" type="MOV">
+      <CONTENTS_NAME><![CDATA[테스트용 동영상 007]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_07.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_07.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="8" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 008]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_08.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_08.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="9" type="MOV">
+      <CONTENTS_NAME><![CDATA[타이틀 글자수 테스트용 동영상 001]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_01.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_01.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="10" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 002]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_02.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_02.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="12" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 003]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_03.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_03.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="13" type="MOV">
+      <CONTENTS_NAME><![CDATA[테스트용 동영상 004]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_04.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_04.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="14" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 005]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_05.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_05.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="15" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 006]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_06.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_06.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="16" type="MOV">
+      <CONTENTS_NAME><![CDATA[테스트용 동영상 007]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_07.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_07.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="17" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 008]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_08.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_08.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="18" type="MOV">
+      <CONTENTS_NAME><![CDATA[타이틀 글자수 테스트용 동영상 001]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_01.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_01.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="19" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 002]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_02.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_02.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="20" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 003]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_03.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_03.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="21" type="MOV">
+      <CONTENTS_NAME><![CDATA[테스트용 동영상 004]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_04.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_04.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="22" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 005]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_05.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_05.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="23" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 006]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_06.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_06.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="24" type="MOV">
+      <CONTENTS_NAME><![CDATA[테스트용 동영상 007]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_07.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_07.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="25" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 008]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_08.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_08.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="26" type="MOV">
+      <CONTENTS_NAME><![CDATA[타이틀 글자수 테스트용 동영상 001]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_01.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_01.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="27" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 002]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_02.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_02.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="28" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 003]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_03.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_03.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="29" type="MOV">
+      <CONTENTS_NAME><![CDATA[테스트용 동영상 004]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_04.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_04.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="30" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 005]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_05.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_05.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="31" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 006]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_06.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_06.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="32" type="MOV">
+      <CONTENTS_NAME><![CDATA[테스트용 동영상 007]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_07.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_07.jpg</THUM_URL>
+    </CONTENTS_INFO>
+    <CONTENTS_INFO id="33" type="MOV">
+      <CONTENTS_NAME><![CDATA[영상 008]]></CONTENTS_NAME>
+      <CONTENTS_DESC><![CDATA[]]></CONTENTS_DESC>
+      <SCH_TYPE sday="20230112" eday="21230228" stime="0000" etime="2359">DAY</SCH_TYPE>
+      <FILE_URL ptime="10.0">commonfiles/contents/vod_08.mp4</FILE_URL>
+      <THUM_URL>commonfiles/contents/vod_08.jpg</THUM_URL>
+    </CONTENTS_INFO>
+  </CONTENTS_LIST>
+</KIOSK>

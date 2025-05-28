@@ -1,0 +1,65 @@
+
+	<NOTICE_INFO>
+		<ID>13</ID>
+		<SORT>1</SORT>
+		<TYPE>MOV</TYPE>
+		<RATIO>F</RATIO>
+		<SDAY>20240101</SDAY>
+		<EDAY>23001231</EDAY>
+		<STIME>0000</STIME>
+		<ETIME>2359</ETIME>
+		<PLAY_TIME>420</PLAY_TIME>
+		<FILE_URL>datafiles/did/20250526/W_0000000013_MAIN.mp4</FILE_URL>
+	</NOTICE_INFO>
+			
+	<NOTICE_INFO id="13" sort="1" type="MOV" ratio="F">
+        <SCH_TYPE sday="20240101" eday="23001231" stime="0000" etime="2359"></SCH_TYPE>
+        <FILE_URL ptime="420">datafiles/did/20250526/W_0000000013_MAIN.mp4</FILE_URL>
+    </NOTICE_INFO>
+	
+	
+	
+
+    <MEDIA_LIST>
+	    <FILE_URL id ="4" playtime="19">datafiles/pt/20250526/I_0000000004_MAIN.mp4</FILE_URL>
+	</MEDIA_LIST>
+
+    <MEDIA_LIST>
+	    <FILE_URL id ="4" ptime="19">datafiles/pt/20250526/I_0000000004_MAIN.mp4</FILE_URL>
+	</MEDIA_LIST>	
+	
+	
+	
+	
+	
+	
+	<NOTICE_INFO>
+		<ID>12</ID>
+		<SORT>1</SORT>
+		<TYPE>IMG</TYPE>
+		<RATIO>F</RATIO>
+		<SDAY>20240101</SDAY>
+		<EDAY>23001231</EDAY>
+		<STIME>0000</STIME>
+		<ETIME>2359</ETIME>
+		<PLAY_TIME>30</PLAY_TIME>
+		<FILE_URL>datafiles/did/20250526/D_0000000012_MAIN.png</FILE_URL>
+	</NOTICE_INFO>	
+	
+	<NOTICE_INFO id="12" sort="1" type="IMG" ratio="F">
+        <SCH_TYPE sday="20240101" eday="23001231" stime="0000" etime="2359"></SCH_TYPE>
+        <FILE_URL ptime="30">datafiles/did/20250526/D_0000000012_MAIN.png</FILE_URL>
+    </NOTICE_INFO>
+
+
+
+	<MEDIA_INFO>
+		<ID>4</ID>
+		<BTN_NAME>미디어 아트-03</BTN_NAME>
+		<FILE_URL>datafiles/pt/20250526/I_0000000004_THUMB.jpg</FILE_URL>
+	</MEDIA_INFO>	
+	
+    <MEDIA_INFO id="4">
+		<BTN_NAME><![CDATA[영상 003]]></BTN_NAME>
+		<THUM_URL>datafiles/pt/20250526/I_0000000004_THUMB.jpg</THUM_URL>
+    </MEDIA_INFO>
