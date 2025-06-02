@@ -68,16 +68,24 @@
     height: 100%;
 }
 
-img{
+.notice_box img{
     width: 100%;
     height: 100%; 
     object-fit:contain;
 }
 
-video{
+.notice_box img.full_size{
+    object-fit:fill
+}
+
+.notice_box video{
     width: 100%;
     height: 100%; 
     object-fit:contain;
+}
+
+.notice_box video.full_size{
+    object-fit:fill
 }
 
 .video_main{
@@ -91,4 +99,14 @@ video{
 .video_box{
     width: 100%;
     height: 100%;
+}
+
+.video_box video{
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+
+.video_box video.full_size{
+    object-fit:fill;
 }

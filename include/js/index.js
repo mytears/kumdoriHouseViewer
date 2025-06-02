@@ -147,17 +147,17 @@ function setCommand(_str) {
     let cmd = t_list[0];
     let arg = t_list[1];
     let t_arg_list = arg.split(",");
-    
+
     if (cmd.toUpperCase() == "UDP_RECV") {
         //UDP_RECV|PLAY,1
-        if(t_arg_list[0] == "PLAY"){
+        if (t_arg_list[0] == "PLAY") {
             setAdminVideoPlay(t_arg_list[1]);
-        }else if(t_arg_list[0] == "STOP"){
-            setAdminVideoStop();            
-        }else if(t_arg_list[0] == "RESET"){
-            setMainReset();    
+        } else if (t_arg_list[0] == "STOP") {
+            setAdminVideoStop();
+        } else if (t_arg_list[0] == "RESET") {
+            setMainReset();
         }
-    } 
+    }
 }
 
 function setScreenAuto() {
@@ -199,6 +199,11 @@ function setNoticeDrawInfo() {
 
     if (obj.TYPE == "IMG") {
         $("#" + str_show + " > img").attr("src", m_root_url + obj.FILE_URL);
+        if (obj.RATIO == "F") {
+            $("#" + str_show + " > img").addClass("full_size");
+        } else if (obj.RATIO == "R") {
+            $("#" + str_show + " > img").removeClass("full_size");
+        }
         $("#" + str_show + " > video").hide();
         $("#" + str_show).children("video")[0].pause();
         $("#" + str_show + " > img").show();
@@ -242,21 +247,43 @@ function setNoticeDrawInfoEnd() {
 }
 
 function setAdminVideoPlay(_code) {
-    console.log("setAdminVideoPlay",_code);
-    m_curr_obj = m_contents_list[parseInt(_code)];
+    console.log("setAdminVideoPlay", _code);
+    m_curr_obj = null;
+    for(var i=0;i<m_contents_list.length;i+=1){
+        if(_code == m_contents_list[i].ID){
+            m_curr_obj = m_contents_list[i];
+        }
+    }
+    if(m_curr_obj == null){
+        return;
+    }
+    console.log("m_curr_obj", m_curr_obj);
     $("#id_main_video").hide();
     $("#id_main_image").hide();
     if (m_curr_obj.TYPE == "MOV") {
         $("#id_main_video").show();
+        if (m_curr_obj.RATIO=="F") {
+            $("#id_main_video").addClass("full_size");
+        }else if (m_curr_obj.RATIO=="R") {
+            $("#id_main_video").removeClass("full_size");
+        }
         $("#id_main_video").attr("src", convFilePath(m_curr_obj.FILE_URL));
-    }else if (m_curr_obj.TYPE == "IMG") {
+    } else if (m_curr_obj.TYPE == "IMG") {
         $("#id_main_image").show();
         $("#id_main_image").attr("src", convFilePath(m_curr_obj.FILE_URL));
     }
-        $(".video_main").fadeIn();
+    $(".video_main").fadeIn();
+    
+    m_curr_video_ptime = parseFloat(m_curr_obj.PTIME) * 1000;
+    clearTimeout(setTimeoutVideoID);
+    setTimeoutVideoID = setTimeout(setVideoTimeOut, m_curr_video_ptime);    
 }
 
-function setAdminVideoStop(){
+function setVideoTimeOut(){
+    setCallWebToApp("UDP_SEND", "STOP");
+}
+
+function setAdminVideoStop() {
     console.log("setAdminVideoStop");
 }
 
