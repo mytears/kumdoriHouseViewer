@@ -144,11 +144,12 @@ function setInitFsCommand() {
 function setCommand(_str) {
     console.log("setCommand", _str);
     let t_list = _str.split("|");
-    let cmd = t_list[0];
-    let arg = t_list[1];
+    let mod = t_list[0];
+    let cmd = t_list[1];
+    let arg = t_list[2];
     let t_arg_list = arg.split(",");
 
-    if (cmd.toUpperCase() == "UDP_RECV") {
+    if (mod.toUpperCase() == "KIOSK" && cmd.toUpperCase() == "UDP_RECV" ) {
         //UDP_RECV|PLAY,1
         if (t_arg_list[0] == "PLAY") {
             setAdminVideoPlay(t_arg_list[1]);
@@ -280,7 +281,7 @@ function setAdminVideoPlay(_code) {
 }
 
 function setVideoTimeOut(){
-    setCallWebToApp("UDP_SEND", "STOP");
+    setCallWebToApp("WALL|UDP_SEND", "STOP");
 }
 
 function setAdminVideoStop() {
