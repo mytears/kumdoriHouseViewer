@@ -1,17 +1,5 @@
-﻿@font-face {
-    font-family: 'nexon';
-    font-weight: 400;
-    src: url(fonts/NEXONLv1GothicRegular.woff2) format('woff2');
-}
-
-@font-face {
-    font-family: 'nexon';
-    font-weight: 700;
-    src: url(fonts/NEXONLv1GothicBold.woff2) format('woff2');
-}
-
-* {
-    font-family: 'nexon';
+﻿* {
+    /* font-family: 'nexon'; */
     margin: 0;
     padding: 0;
     -webkit-text-size-adjust: none;
