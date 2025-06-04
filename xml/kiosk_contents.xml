@@ -5,28 +5,21 @@
     </HEADER>
   <NOTICE_LIST>
 	
-	<NOTICE_INFO id="11" sort="3" type="MOV" ratio="F">
+	<NOTICE_INFO id="11" sort="1" type="MOV" ratio="F">
         <SCH_TYPE sday="20240101" eday="23001231" stime="0000" etime="2359"></SCH_TYPE>
-        <FILE_URL ptime="30">commonfiles/contents/vod_01.mp4</FILE_URL>
-    </NOTICE_INFO>
-	<NOTICE_INFO id="12" sort="2" type="IMG" ratio="F">
-        <SCH_TYPE sday="20240101" eday="23001231" stime="0000" etime="2359"></SCH_TYPE>
-        <FILE_URL ptime="10">commonfiles/notice/intro_bg1.png</FILE_URL>
-    </NOTICE_INFO>
-	<NOTICE_INFO id="13" sort="1" type="IMG" ratio="F">
-        <SCH_TYPE sday="20240101" eday="23001231" stime="0000" etime="2359"></SCH_TYPE>
-        <FILE_URL ptime="10">commonfiles/notice/intro_bg2.png</FILE_URL>
+        <FILE_URL ptime="420">commonfiles/contents/waiting.mp4</FILE_URL>
     </NOTICE_INFO>
   </NOTICE_LIST>
     <MEDIA_LIST>
-	    <FILE_URL id ="1" ratio="F" ptime="19">commonfiles/contents/vod_01.mp4</FILE_URL>
-	    <FILE_URL id ="2" ratio="R" ptime="19">commonfiles/contents/vod_02.mp4</FILE_URL>
-	    <FILE_URL id ="3" ratio="F" ptime="19">commonfiles/contents/vod_03.mp4</FILE_URL>
-	    <FILE_URL id ="4" ratio="R" ptime="19">commonfiles/contents/vod_04.mp4</FILE_URL>
-	    <FILE_URL id ="5" ratio="F" ptime="19">commonfiles/contents/vod_05.mp4</FILE_URL>
-	    <FILE_URL id ="6" ratio="R" ptime="19">commonfiles/contents/vod_06.mp4</FILE_URL>
-	    <FILE_URL id ="7" ratio="F" ptime="19">commonfiles/contents/vod_07.mp4</FILE_URL>
-	    <FILE_URL id ="8" ratio="R" ptime="19">commonfiles/contents/vod_08.mp4</FILE_URL>
-	    <FILE_URL id ="9" ratio="F" ptime="19">commonfiles/contents/vod_09.mp4</FILE_URL>
+	    <FILE_URL id ="1" ratio="F" ptime="20">commonfiles/contents/1.mp4</FILE_URL>
+	    <FILE_URL id ="2" ratio="F" ptime="23">commonfiles/contents/2.mp4</FILE_URL>
+	    <FILE_URL id ="3" ratio="F" ptime="19">commonfiles/contents/3.mp4</FILE_URL>
+	    <FILE_URL id ="4" ratio="F" ptime="19">commonfiles/contents/4.mp4</FILE_URL>
+	    <FILE_URL id ="5" ratio="F" ptime="20">commonfiles/contents/5.mp4</FILE_URL>
+	    <FILE_URL id ="6" ratio="F" ptime="20">commonfiles/contents/6.mp4</FILE_URL>
+	    <FILE_URL id ="7" ratio="F" ptime="20">commonfiles/contents/7.mp4</FILE_URL>
+	    <FILE_URL id ="8" ratio="F" ptime="20">commonfiles/contents/8.mp4</FILE_URL>
+	    <FILE_URL id ="9" ratio="F" ptime="27">commonfiles/contents/9.mp4</FILE_URL>
+	    <FILE_URL id ="10" ratio="F" ptime="23">commonfiles/contents/10.mp4</FILE_URL>
     </MEDIA_LIST>
 </KIOSK>

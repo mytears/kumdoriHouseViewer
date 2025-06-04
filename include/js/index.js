@@ -5,6 +5,7 @@ let m_contents_url = "";
 let m_root_url = "";
 let m_notice_mode = "";
 let setTimeoutID = null;
+let setTimeoutVideoID = null;
 let setAnimationTimeoutID = null;
 
 let m_xml_data = new Object();
@@ -22,36 +23,6 @@ let m_curr_obj = null;
 
 
 function setInit() {
-
-    $(".btn_play").on("touchstart mousedown", function (e) {
-        e.preventDefault();
-        onClickBtnPlay(this);
-    });
-
-    $(".btn_stop").on("touchstart mousedown", function (e) {
-        e.preventDefault();
-        onClickBtnStop(this);
-    });
-
-    $(".btn_close").on("touchstart mousedown", function (e) {
-        e.preventDefault();
-        onClickBtnClose(this);
-    });
-
-    $('.screen_page').on("touchstart mousedown", function (e) {
-        e.preventDefault();
-        onClickScreenSaver();
-    });
-
-    $("html").on("touchstart mousedown", function (e) {
-        // 입력 가능한 요소는 기본 동작 허용
-        const tag = e.target.tagName.toLowerCase();
-        if (tag !== 'input' && tag !== 'textarea' && tag !== 'select' && tag !== 'button') {
-            e.preventDefault(); // 이 외 요소에서만 prevent
-        }
-        setTouched();
-    });
-
     m_time_last = new Date().getTime();
     setInterval(setMainInterval, 1000);
     setLoadSetting("include/setting.json");
@@ -68,19 +39,15 @@ function setMainInterval() {
     time_gap = Math.floor(time_gap / 1000);
 
     if (time_gap >= 180) {
-        m_time_last = new Date().getTime();
-        setMainReset();
+        //m_time_last = new Date().getTime();
+        //setMainReset();
     }
 
     m_status_time_chk += 1;
-    if (m_status_time_chk > 10) {
+    if (m_status_time_chk > 60) {
         m_status_time_chk = 0;
         setCallWebToApp('STATUS', 'STATUS');
     }
-}
-
-function setTouched() {
-    m_time_last = new Date().getTime();
 }
 
 function setLoadSetting(_url) {
@@ -113,8 +80,6 @@ function setHideCover() {
 
 //초기화
 function setInitSetting(_ret_code) {
-    //console.log(m_notice_list);
-    //console.log(m_contents_list);
 
     setNoticeDrawInfo();
 
@@ -126,10 +91,9 @@ function setInitSetting(_ret_code) {
 
 function setMainReset() {
     console.log("setMainReset");
-    $(".img_char").addClass("pause");
     setScreenAuto();
     m_curr_obj = null;
-    setAdminVideoStop();
+    setMainVideoStop();
 }
 
 function setInitFsCommand() {
@@ -144,17 +108,17 @@ function setInitFsCommand() {
 function setCommand(_str) {
     console.log("setCommand", _str);
     let t_list = _str.split("|");
-    let mod = t_list[0];
-    let cmd = t_list[1];
+    let cmd = t_list[0];
+    let mod = t_list[1];
     let arg = t_list[2];
     let t_arg_list = arg.split(",");
 
-    if (mod.toUpperCase() == "KIOSK" && cmd.toUpperCase() == "UDP_RECV" ) {
-        //UDP_RECV|PLAY,1
+    if (mod.toUpperCase() == "KIOSK" && cmd.toUpperCase() == "UDP_RECV") {
+        //UDP_RECV|KIOSK|PLAY|1
         if (t_arg_list[0] == "PLAY") {
-            setAdminVideoPlay(t_arg_list[1]);
+            setMainVideoPlay(t_arg_list[1]);
         } else if (t_arg_list[0] == "STOP") {
-            setAdminVideoStop();
+            setMainVideoStop();
         } else if (t_arg_list[0] == "RESET") {
             setMainReset();
         }
@@ -162,10 +126,12 @@ function setCommand(_str) {
 }
 
 function setScreenAuto() {
+    console.log($(".screen_page").css("display"));
     if ($(".screen_page").css("display") == "none") {
         clearTimeout(setTimeoutID);
         setNoticeDrawInfo();
         $(".screen_page").show();
+        $(".video_main").fadeOut();
     }
 }
 
@@ -247,25 +213,29 @@ function setNoticeDrawInfoEnd() {
     }
 }
 
-function setAdminVideoPlay(_code) {
-    console.log("setAdminVideoPlay", _code);
+function setMainVideoPlay(_code) {
+    console.log("setMainVideoPlay", _code);
     m_curr_obj = null;
-    for(var i=0;i<m_contents_list.length;i+=1){
-        if(_code == m_contents_list[i].ID){
+    for (var i = 0; i < m_contents_list.length; i += 1) {
+        if (_code == m_contents_list[i].ID) {
             m_curr_obj = m_contents_list[i];
         }
     }
-    if(m_curr_obj == null){
+    if (m_curr_obj == null) {
+        setCallWebToApp("SET_LOG", "컨텐츠가 존재하지 않습니다. > ID : " + _code);
         return;
     }
+
+    onClickScreenSaver();
+
     console.log("m_curr_obj", m_curr_obj);
     $("#id_main_video").hide();
     $("#id_main_image").hide();
     if (m_curr_obj.TYPE == "MOV") {
         $("#id_main_video").show();
-        if (m_curr_obj.RATIO=="F") {
+        if (m_curr_obj.RATIO == "F") {
             $("#id_main_video").addClass("full_size");
-        }else if (m_curr_obj.RATIO=="R") {
+        } else if (m_curr_obj.RATIO == "R") {
             $("#id_main_video").removeClass("full_size");
         }
         $("#id_main_video").attr("src", convFilePath(m_curr_obj.FILE_URL));
@@ -274,18 +244,19 @@ function setAdminVideoPlay(_code) {
         $("#id_main_image").attr("src", convFilePath(m_curr_obj.FILE_URL));
     }
     $(".video_main").fadeIn();
-    
+
     m_curr_video_ptime = parseFloat(m_curr_obj.PTIME) * 1000;
     clearTimeout(setTimeoutVideoID);
-    setTimeoutVideoID = setTimeout(setVideoTimeOut, m_curr_video_ptime);    
+    setTimeoutVideoID = setTimeout(setVideoTimeOut, m_curr_video_ptime);
 }
 
-function setVideoTimeOut(){
-    setCallWebToApp("WALL|UDP_SEND", "STOP");
+function setVideoTimeOut() {
+    setCallWebToApp("UDP_SEND", "WALL|STOP,0");
 }
 
-function setAdminVideoStop() {
-    console.log("setAdminVideoStop");
+function setMainVideoStop() {
+    console.log("setMainVideoStop");
+    $("#id_main_video")[0].pause();
 }
 
 function setMainTimeOut() {

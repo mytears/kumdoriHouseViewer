@@ -39,7 +39,7 @@ html,
 body {
     font-size: 56px;
     color: #000000;
-/*    overflow: hidden;*/
+    overflow: hidden;
     touch-action: none;
     /*    background-color: transparent;*/
     background: #ffffff;
