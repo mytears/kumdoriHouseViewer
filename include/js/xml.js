@@ -14,7 +14,7 @@ function setParsingContentsXml(xmlDoc) {
     var ret_code = "FAIL";
 
     try {
-        var root = xmlDoc.getElementsByTagName("KIOSK")[0];
+        var root = xmlDoc.getElementsByTagName("DATA")[0];
         if (!root) {
             setInitSetting("FAIL DATA");
             return;

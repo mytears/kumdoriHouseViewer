@@ -114,7 +114,7 @@ function setCommand(_str) {
     let t_arg_list = arg.split(",");
 
     if (mod.toUpperCase() == "KIOSK" && cmd.toUpperCase() == "UDP_RECV") {
-        //UDP_RECV|KIOSK|PLAY,1
+        //UDP_RECV|KIOSK|PLAY|1
         if (t_arg_list[0] == "PLAY") {
             setMainVideoPlay(t_arg_list[1]);
         } else if (t_arg_list[0] == "STOP") {
@@ -142,7 +142,6 @@ function setNoticeDrawInfo() {
     if (m_notice_list.length == 0) return;
 
     m_curr_notice_cnt++;
-    //console.log(m_curr_notice_cnt, m_notice_list.length, m_curr_notice)
     if (m_curr_notice_cnt >= m_notice_list.length) m_curr_notice_cnt = 0;
 
     var obj = m_notice_list[m_curr_notice_cnt];
@@ -164,7 +163,6 @@ function setNoticeDrawInfo() {
         $("#id_notice_box_01").css("zIndex", 10);
         $("#id_notice_box_02").css("zIndex", 9);
     }
-    //console.log(str_show);
 
     if (obj.TYPE == "IMG") {
         $("#" + str_show + " > img").attr("src", m_root_url + obj.FILE_URL);
@@ -182,115 +180,11 @@ function setNoticeDrawInfo() {
         } else if (obj.RATIO == "R") {
             $("#" + str_show + " > video").removeClass("full_size");
         }
-        
         $("#" + str_show + " > video").attr("src", m_root_url + obj.FILE_URL);
         $("#" + str_show + " > video").show();
         $("#" + str_show + " > img").hide();
-        //$("#" + str_show).children("video")[0].play();
-        let video_id = $("#" + str_show + " > video").attr("id");
-        setCallWebToApp("UNMUTE", video_id);
-        /*
-        var $video = $("#" + str_show + " > video");
-        var video_el = $video[0]; // native DOM element
-        var video_url = m_root_url + obj.FILE_URL;
-
-        // 기존 <source> 태그 제거 및 재설정 (보다 확실한 방식)
-        $video.empty();
-        $video.append($("<source>", {
-            src: video_url,
-            type: "video/mp4"
-        }));
-        $video.show();
-        $("#" + str_show + " > img").hide();
-
-        // 비디오 상태 로그 및 오류 추적용 이벤트 바인딩
-        $video.off("error canplay waiting stalled pause play ended");
-        $video.on("error", function (e) {
-            const err = this.error;
-            console.error("🚫 비디오 재생 오류!", err);
-        });
-        $video.on("waiting", () => console.warn("⏳ 버퍼링 중..."));
-        $video.on("stalled", () => console.warn("⚠️ 재생 정지 (stalled)..."));
-        $video.on("canplay", function () {
-            console.log("✅ 재생 가능 상태!");
-            video_el.play().catch(err => console.error("🎬 play() 실패", err));
-        });
-        $video.on("ended", () => console.log("🏁 영상 끝남"));
-        $video.on("pause", () => console.log("⏸️ 일시정지됨"));
-        $video.on("play", () => console.log("▶️ 재생 시작"));
-
-        video_el.load(); // src가 바뀌었기 때문에 load() 반드시 호출
-        */
+        $("#" + str_show).children("video")[0].play();
     }
-
-    /*
-    var $video = $("#" + str_show + " > video");
-
-    // 상태 확인을 위한 이벤트들
-    $video.on("loadedmetadata", function () {
-        console.log("메타데이터 로드 완료 (duration, video size 등)");
-    });
-
-    $video.on("play", function () {
-        console.log("비디오 재생 시작");
-    });
-
-    $video.on("pause", function () {
-        console.log("비디오 일시 정지");
-    });
-
-    $video.on("ended", function () {
-        console.log("비디오 재생 종료");
-    });
-
-    $video.on("timeupdate", function () {
-        console.log("현재 재생 위치:", this.currentTime);
-    });
-
-    $video.on("seeking", function () {
-        console.log("탐색 중...");
-    });
-
-    $video.on("seeked", function () {
-        console.log("탐색 완료");
-    });
-
-    $video.on("waiting", function () {
-        console.log("버퍼링 중...");
-    });
-
-    $video.on("canplay", function () {
-        console.log("재생 가능한 상태");
-    });
-
-    $video.on("error", function(e) {
-        const error = this.error;
-        let message = "알 수 없는 오류";
-
-        if (error) {
-            switch (error.code) {
-                case error.MEDIA_ERR_ABORTED:
-                    message = "사용자가 비디오 재생을 중단함.";
-                    break;
-                case error.MEDIA_ERR_NETWORK:
-                    message = "네트워크 오류로 인해 다운로드 실패.";
-                    break;
-                case error.MEDIA_ERR_DECODE:
-                    message = "비디오 디코딩 중 오류 발생.";
-                    break;
-                case error.MEDIA_ERR_SRC_NOT_SUPPORTED:
-                    message = "지원하지 않는 포맷 또는 파일을 찾을 수 없음.";
-                    break;
-            }
-        }
-
-        console.error("비디오 오류:", message, error);
-    });
-
-    */
-
-
-    //console.log(str_show);
     m_curr_notice_type = obj.TYPE;
     m_curr_notice_ptime = obj.PTIME;
     if (m_curr_notice_ptime < 5) m_curr_notice_ptime = 5;
@@ -349,9 +243,7 @@ function setMainVideoPlay(_code) {
         } else if (m_curr_obj.RATIO == "R") {
             $("#id_main_video").removeClass("full_size");
         }
-        $("#id_main_video").attr("src", convFilePath(m_curr_obj.FILE_URL));        
-        let video_id = "#id_main_video";
-        setCallWebToApp("UNMUTE", video_id);
+        $("#id_main_video").attr("src", convFilePath(m_curr_obj.FILE_URL));
     } else if (m_curr_obj.TYPE == "IMG") {
         $("#id_main_image").show();
         $("#id_main_image").attr("src", convFilePath(m_curr_obj.FILE_URL));
@@ -385,10 +277,10 @@ function onClickScreenSaver() {
         return;
     }
     try {
-        $("#id_notice_box_01").children("video")[0].pause();
+        $("#id_screen_area_01").children("video")[0].pause();
     } catch (err) {}
     try {
-        $("#id_notice_box_02").children("video")[0].pause();
+        $("#id_screen_area_02").children("video")[0].pause();
     } catch (err) {}
     $(".screen_page").fadeOut();
     clearTimeout(setTimeoutID);
