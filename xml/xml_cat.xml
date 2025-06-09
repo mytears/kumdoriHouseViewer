@@ -7,16 +7,16 @@
     <NOTICE_LIST>
       <NOTICE_INFO id="62" sort="1" type="MOV" ratio="F">
         <SCH_TYPE sday="20240101" eday="23001231" stime="0000" etime="2359"/>
-        <FILE_URL ptime="40">commonfiles/contents/waiting.mp4</FILE_URL>
+        <FILE_URL ptime="40">commonfiles/contents/10.mp4</FILE_URL>
       </NOTICE_INFO>
     </NOTICE_LIST>
     <MEDIA_LIST>
-      <FILE_URL id="10" ptime="23" ratio="F">datafiles/pt/20250609/I_0000000010_MAIN.mp4</FILE_URL>
-      <FILE_URL id="8" ptime="20" ratio="F">datafiles/pt/20250609/I_0000000008_MAIN.mp4</FILE_URL>
-      <FILE_URL id="6" ptime="20" ratio="F">datafiles/pt/20250609/I_0000000006_MAIN.mp4</FILE_URL>
-      <FILE_URL id="5" ptime="20" ratio="F">datafiles/pt/20250609/I_0000000005_MAIN.mp4</FILE_URL>
-      <FILE_URL id="3" ptime="19" ratio="F">datafiles/pt/20250609/I_0000000003_MAIN.mp4</FILE_URL>
-      <FILE_URL id="2" ptime="23" ratio="F">datafiles/pt/20250609/I_0000000002_MAIN.mp4</FILE_URL>
+      <FILE_URL id="1" ptime="23" ratio="F">commonfiles/contents/1.mp4</FILE_URL>
+      <FILE_URL id="2" ptime="20" ratio="F">commonfiles/contents/2.mp4</FILE_URL>
+      <FILE_URL id="3" ptime="20" ratio="F">commonfiles/contents/3.mp4</FILE_URL>
+      <FILE_URL id="4" ptime="20" ratio="F">commonfiles/contents/4.mp4</FILE_URL>
+      <FILE_URL id="5" ptime="19" ratio="F">commonfiles/contents/5.mp4</FILE_URL>
+      <FILE_URL id="6" ptime="23" ratio="F">commonfiles/contents/6.mp4</FILE_URL>
     </MEDIA_LIST>
   </CONTENTS>
 </DATA>

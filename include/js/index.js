@@ -350,7 +350,7 @@ function setMainVideoPlay(_code) {
             $("#id_main_video").removeClass("full_size");
         }
         $("#id_main_video").attr("src", convFilePath(m_curr_obj.FILE_URL));        
-        let video_id = "#id_main_video";
+        let video_id = "id_main_video";
         setCallWebToApp("UNMUTE", video_id);
     } else if (m_curr_obj.TYPE == "IMG") {
         $("#id_main_image").show();
