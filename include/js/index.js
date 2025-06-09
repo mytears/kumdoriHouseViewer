@@ -175,6 +175,11 @@ function setNoticeDrawInfo() {
         $("#" + str_show).children("video")[0].pause();
         $("#" + str_show + " > img").show();
     } else {
+        if (obj.RATIO == "F") {
+            $("#" + str_show + " > video").addClass("full_size");
+        } else if (m_curr_obj.RATIO == "R") {
+            $("#" + str_show + " > video").removeClass("full_size");
+        }
         $("#" + str_show + " > video").attr("src", m_root_url + obj.FILE_URL);
         $("#" + str_show + " > video").show();
         $("#" + str_show + " > img").hide();
