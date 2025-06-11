@@ -20,9 +20,15 @@ let m_curr_notice_cnt = -1;
 let m_notice_timeout = null;
 let m_default_font_size = 90;
 let m_curr_obj = null;
-
+let m_curr_code = "";
 
 function setInit() {
+    $("#id_main_video").on("ended", function() {
+        console.log("비디오가 종료되었습니다.");
+        // 여기에 종료 후 처리할 코드 작성
+        setVideoTimeOut();
+    });
+
     m_time_last = new Date().getTime();
     setInterval(setMainInterval, 1000);
     setLoadSetting("include/setting.json");
@@ -93,6 +99,7 @@ function setMainReset() {
     console.log("setMainReset");
     setScreenAuto();
     m_curr_obj = null;
+    m_curr_code = "";
     setMainVideoStop();
 }
 
@@ -113,7 +120,7 @@ function setCommand(_str) {
     let arg = t_list[2];
     let t_arg_list = arg.split(",");
 
-    if (mod.toUpperCase() == "KIOSK" && cmd.toUpperCase() == "UDP_RECV") {
+    if (cmd.toUpperCase() == "UDP_RECV" && mod.toUpperCase() == "KIOSK") {
         //UDP_RECV|KIOSK|PLAY,1
         if (t_arg_list[0] == "PLAY") {
             setMainVideoPlay(t_arg_list[1]);
@@ -349,18 +356,24 @@ function setMainVideoPlay(_code) {
         } else if (m_curr_obj.RATIO == "R") {
             $("#id_main_video").removeClass("full_size");
         }
-        $("#id_main_video").attr("src", convFilePath(m_curr_obj.FILE_URL));        
+        if(m_curr_code != _code){
+            $("#id_main_video").attr("src", convFilePath(m_curr_obj.FILE_URL));        
+        }else{
+            $("#id_main_video")[0].play();
+        }
         let video_id = "id_main_video";
         setCallWebToApp("UNMUTE", video_id);
     } else if (m_curr_obj.TYPE == "IMG") {
         $("#id_main_image").show();
         $("#id_main_image").attr("src", convFilePath(m_curr_obj.FILE_URL));
     }
+    m_curr_code = _code;
+    
     $(".video_main").fadeIn();
 
-    m_curr_video_ptime = parseFloat(m_curr_obj.PTIME) * 1000;
-    clearTimeout(setTimeoutVideoID);
-    setTimeoutVideoID = setTimeout(setVideoTimeOut, m_curr_video_ptime);
+    //m_curr_video_ptime = parseFloat(m_curr_obj.PTIME) * 1000;
+    //clearTimeout(setTimeoutVideoID);
+    //setTimeoutVideoID = setTimeout(setVideoTimeOut, m_curr_video_ptime);
 }
 
 function setVideoTimeOut() {
